@@ -34,6 +34,7 @@ jobs:
         pip install codacy-coverage
         pip install selenium
         pip install requests
+        sudo apt-get install chromium-browser chromium-chromedriver
         cp decide/local_settings.gactions.py decide/local_settings.py
     - name: Run migrations (unnecessary)
       run: |
