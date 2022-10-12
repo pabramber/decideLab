@@ -32,6 +32,7 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r requirements.txt
         pip install codacy-coverage
+        pip install selenium
         cp decide/local_settings.gactions.py decide/local_settings.py
     - name: Run migrations (unnecessary)
       run: |
