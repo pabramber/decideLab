@@ -37,7 +37,7 @@ jobs:
         cp decide/local_settings.gactions.py decide/local_settings.py
     - name: chrome install
       uses: browser-actions/setup-chrome@latest
-      run: chrome --version
+    - run: chrome --version
     - name: Run migrations (unnecessary)
       run: |
         cd decide
