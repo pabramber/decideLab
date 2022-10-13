@@ -21,10 +21,10 @@ class AdminTestCase(StaticLiveServerTestCase):
 
         options = webdriver.ChromeOptions()
         options.headless = False
-        options.add_argument("start-maximized")
         options.add_argument("--no-sandbox")
         options.add_argument("--remote-debugging-port=9222")
         options.add_argument("--disable-dev-shm-using")
+        options.add_argument("--headless")
         self.driver = webdriver.Chrome("/usr/bin/chromedriver", options=options)
 
         super().setUp()            
