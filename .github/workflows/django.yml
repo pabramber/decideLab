@@ -44,11 +44,13 @@ jobs:
         rm ./google-chrome-stable_current_amd64.deb
         google-chrome --version
     - name: chromedriver install
-      uses: nanasess/setup-chromedriver@v1
-    - run: |
-        export DISPLAY=:99
-        chromedriver --url-base=/wd/hub &
-        sudo Xvfb -ac :99 -screen 0 1280x1024x24 > /dev/null 2>&1 & # optional
+      run: |
+        wget https://chromedriver.storage.googleapis.com/106.0.5249.61/chromedriver_linux64.zip
+        unzip chromedriver_linux64.zip
+        rm chromedriver_linux64.zip
+        sudo mv chromedriver /usr/bin/chromedriver
+        sudo chown root:root /usr/bin/chromedriver
+        sudo chmod +x /usr/bin/chromedriver
     - name: Run migrations (unnecessary)
       run: |
         cd decide
