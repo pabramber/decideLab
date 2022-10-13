@@ -21,6 +21,9 @@ class AdminTestCase(StaticLiveServerTestCase):
 
         options = webdriver.ChromeOptions()
         options.headless = False
+        options.add_argument("--no-sandbox")
+        options.add_argument("--disable-dev-shm-using")
+        options.add_argument("--headless")
         self.driver = webdriver.Chrome(options=options)
 
         super().setUp()            
