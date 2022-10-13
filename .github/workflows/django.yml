@@ -51,6 +51,8 @@ jobs:
         sudo mv chromedriver /usr/bin/chromedriver
         sudo chown root:root /usr/bin/chromedriver
         sudo chmod +x /usr/bin/chromedriver
+        chromedriver --version
+        which chromedriver
     - name: Run migrations (unnecessary)
       run: |
         cd decide
