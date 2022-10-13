@@ -34,6 +34,7 @@ jobs:
         pip install codacy-coverage
         pip install selenium
         pip install requests
+        sudo apt install chromium-browser chromium-chromedriver
         cp decide/local_settings.gactions.py decide/local_settings.py
     - name: chrome install
       run: |
@@ -43,16 +44,6 @@ jobs:
         sudo apt install ./google-chrome-stable_current_amd64.deb
         rm ./google-chrome-stable_current_amd64.deb
         google-chrome --version
-    - name: chromedriver install
-      run: |
-        wget https://chromedriver.storage.googleapis.com/106.0.5249.61/chromedriver_linux64.zip
-        unzip chromedriver_linux64.zip
-        rm chromedriver_linux64.zip
-        sudo mv chromedriver /usr/bin/chromedriver
-        sudo chown root:root /usr/bin/chromedriver
-        sudo chmod +x /usr/bin/chromedriver
-        chromedriver --version
-        which chromedriver
     - name: Run migrations (unnecessary)
       run: |
         cd decide
